@@ -1,0 +1,12 @@
+language: go
+
+go:
+  - "1.x"
+  - "1.8"
+  - "1.11.x"
+
+install:
+  # Add Godeps dependencies to GOPATH and PATH
+  - go get -t github.com/gorilla/rpc
+  - export GOPATH="${TRAVIS_BUILD_DIR}/Godeps/_workspace:$GOPATH"
+  - export PATH="${TRAVIS_BUILD_DIR}/Godeps/_workspace/bin:$PATH"
